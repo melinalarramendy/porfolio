@@ -11,46 +11,28 @@ export const Projects = () => {
         title: "Sistema de logeo",
         description: "Desarrollo de sistema de logeo con autenticación de usuario",
         imgUrl: logo,
+        githubUrl:"https://github.com/melinalarramendy/sistema-login"
       },
       {
         title: "Sistema de gestión de tareas",
         description: "Desarrollo de sistema de gestión de tareas con autenticación de usuario",
         imgUrl: logo,
+        githubUrl:"https://github.com/melinalarramendy/taskManager"
       },
       {
         title: "Portfolio", 
         description: "Desarrollo y diseño de portfolio personal con React y Bootstrap",
         imgUrl: logo,
-      },
-      {
-        title: "",
-        description: ".",
-        imgUrl: logo,
-      },
-      {
-        title: "",
-        description: "",
-        imgUrl: logo,
-      },
-      {
-        title: "",
-        description: "",
-        imgUrl: logo,
+        githubUrl:"https://github.com/melinalarramendy/porfolio"
       }
     ];
-
     const projectsP = [
       {
         title: "Sistema de logeo",
         description: "Desarrollo de sistema de logeo con autenticación de usuario",
         imgUrl: logo,
-      },
-      {
-        title: "Comparador de precios",
-        description: "Desarrollo de comparador de precios de productos de supermercados usando web scrapping",
-        imgUrl: logo,
+        githubUrl:"https://github.com/melinalarramendy/sistema-login-flask"
       }
-      
     ]
   
     return (
