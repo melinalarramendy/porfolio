@@ -2,6 +2,8 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import 'animate.css';
 import logo from "../assets/img/logo.png";
+import loginMERN from "../assets/img/loginMERN.png";
+import porfolio from "../assets/img/porfolio.png";
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
@@ -10,7 +12,7 @@ export const Projects = () => {
       {
         title: "Sistema de logeo",
         description: "Desarrollo de sistema de logeo con autenticación de usuario",
-        imgUrl: logo,
+        imgUrl: loginMERN,
         githubUrl:"https://github.com/melinalarramendy/sistema-login"
       },
       {
@@ -22,7 +24,7 @@ export const Projects = () => {
       {
         title: "Portfolio", 
         description: "Desarrollo y diseño de portfolio personal con React y Bootstrap",
-        imgUrl: logo,
+        imgUrl: porfolio,
         githubUrl:"https://github.com/melinalarramendy/porfolio"
       }
     ];
