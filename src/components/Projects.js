@@ -11,13 +11,13 @@ export const Projects = () => {
     const projectsMERN = [
       {
         title: "Sistema de logeo",
-        description: "Desarrollo de sistema de logeo con autenticación de usuario",
+        description: "Desarrollo de sistema de logeo con autenticación de usuario, hasheo de contraseña y jwt",
         imgUrl: loginMERN,
         githubUrl:"https://github.com/melinalarramendy/sistema-login"
       },
       {
         title: "Sistema de gestión de tareas",
-        description: "Desarrollo de sistema de gestión de tareas con autenticación de usuario",
+        description: "Desarrollo de sistema de gestión de tareas con autenticación de usuario con jwt",
         imgUrl: logo,
         githubUrl:"https://github.com/melinalarramendy/taskManager"
       },
@@ -31,7 +31,7 @@ export const Projects = () => {
     const projectsP = [
       {
         title: "Sistema de logeo",
-        description: "Desarrollo de sistema de logeo con autenticación de usuario",
+        description: "Desarrollo de sistema de logeo con autenticación de usuario (hasheo de contraseña y jwt)",
         imgUrl: logo,
         githubUrl:"https://github.com/melinalarramendy/sistema-login-flask"
       }

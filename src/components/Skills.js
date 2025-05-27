@@ -49,7 +49,7 @@ export const Skills = () => {
                                         />
                                     </div>
                                     <h5 className='mt-2'>Bases de datos</h5>
-                                    <p>PosgreSQL, MySQL</p>
+                                    <p>PosgreSQL, MongoBD</p>
                                 </div>
                                 <div className="item">
                                     <div style={{
@@ -92,7 +92,7 @@ export const Skills = () => {
                                         margin: '0 auto 15px'
                                     }}>
                                         <CircularProgressbar
-                                            value={40}
+                                            value={55}
                                             
                                             styles={{
                                                 path: { stroke: 'var(--color1)' },
