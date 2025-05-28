@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Swal from 'sweetalert2';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true
+});
 
 export const Contact = () => {
 
@@ -43,11 +52,19 @@ export const Contact = () => {
             if (response.ok) {
                 setStatus({ success: true, message: '¡Mensaje enviado!' });
                 setFormDetails(formInitialDetails);
+                Toast.fire({
+                    icon: 'success',
+                    title: '¡Mensaje enviado correctamente!'
+                });
             } else {
                 throw new Error('Error al enviar');
             }
         } catch (error) {
             setStatus({ success: false, message: 'Error al enviar el mensaje' });
+            Toast.fire({
+                icon: 'error',
+                title: 'Hubo un error al enviar el mensaje'
+            });
         } finally {
             setButtonText("Enviar");
         }

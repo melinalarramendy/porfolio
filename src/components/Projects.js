@@ -4,6 +4,7 @@ import 'animate.css';
 import logo from "../assets/img/logo.png";
 import loginMERN from "../assets/img/loginMERN.png";
 import porfolio from "../assets/img/porfolio.png";
+import loginflask from "../assets/img/login-flask.png";
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
@@ -32,7 +33,7 @@ export const Projects = () => {
       {
         title: "Sistema de logeo",
         description: "Desarrollo de sistema de logeo con autenticación de usuario (hasheo de contraseña y jwt)",
-        imgUrl: logo,
+        imgUrl: loginflask,
         githubUrl:"https://github.com/melinalarramendy/sistema-login-flask"
       }
     ]
