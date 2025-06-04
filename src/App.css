@@ -1,16 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Paytone+One&display=swap');
+
 :root {
-  --color1: #cb6f84;
-  --color2: #291d21;
-  --color3: #5d544d;
-  --color4: #cfccbb;
-  --color5: #e1daca;
+  --color-bg-primary: #F9F6FF;
+  --color-bg-secondary: #FFFFFF;
+  --color-text-primary: #2A1A4C;
+  --color-text-secondary: #5F4B8B;
+  --color-primary: #FF6B00;
+  --color-secondary: #9747FF;
+  --color-hover: #FF8C42;
+  --color-borders: #E0DBF5;
+
+  --background: var(--color-bg-primary);
+  --surface: var(--color-bg-secondary);
+  --on-background: var(--color-text-primary);
+  --on-surface: var(--color-text-secondary);
+  --primary: var(--color-primary);
+  --secondary: var(--color-secondary);
+  --hover-state: var(--color-hover);
+  --outline: var(--color-borders);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg-primary: #1B1229;
+    --color-bg-secondary: #241A36;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #E0DBF5;
+    --color-secondary: #C084FC;
+    --color-hover: #FF944D;
+    --color-borders: #3A2F4C;
+  }
+}
+
+
+[data-theme="dark"] {
+  --color-bg-primary: #1B1229;
+  --color-bg-secondary: #241A36;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #E0DBF5;
+  --color-secondary: #C084FC;
+  --color-hover: #FF944D;
+  --color-borders: #3A2F4C;
+}
+
+[data-theme="light"] {
+  --color-bg-primary: #F9F6FF;
+  --color-bg-secondary: #FFFFFF;
+  --color-text-primary: #2A1A4C;
+  --color-text-secondary: #5F4B8B;
+  --color-secondary: #9747FF;
+  --color-hover: #FF8C42;
+  --color-borders: #E0DBF5;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif !important;
+  font-family: "Outfit", sans-serif !important;
+  font-style: normal;
 }
 
 html {
@@ -22,24 +70,24 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: var(--color5) !important;
-  color: var(--color2) !important;
+  background-color: var(--background) !important;
+  color: var(--on-background) !important;
 }
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   margin: 0;
   padding: 0;
   line-height: normal;
-  color: var(--color2);
+  color: var(--on-background);
+  font-family: "Paytone One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 a {
-  color: var(--color1);
+  color: var(--primary);
 }
 
 p,
@@ -55,7 +103,7 @@ ul {
 
 a:hover {
   text-decoration: none;
-  color: var(--color3);
+  color: var(--hover-state);
 }
 
 img {
@@ -82,27 +130,34 @@ select:focus {
 }
 
 /************ Navbar ************/
-
 nav.navbar {
-  background-color: var(--color2);
+  background-color: var(--color-bg-primary);
   padding: 18px 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 9999;
-  transition: 0.32s ease-in-out;
+  transition: all 0.32s ease-in-out;
+  border-bottom: 1px solid var(--outline);
 }
 
-nav.navbar .navbar-brand p {
-  color: var(--color5);
+
+nav.navbar .navbar-brand h4 {
+  color: var(--on-background); 
   font-size: 45px;
   font-weight: 700;
   letter-spacing: 0.8px;
+  transition: color 0.3s ease;
 }
 
 nav.navbar.scrolled {
-  padding: 0px 0;
-  background-color: #121212;
+  padding: 10px 0;
+  background-color: var(--color-bg-primary);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] nav.navbar.scrolled {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
 }
 
 nav.navbar a.navbar-brand {
@@ -111,16 +166,17 @@ nav.navbar a.navbar-brand {
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  color: var(--color5) !important;
+  color: var(--on-surface) !important; 
   letter-spacing: 0.8px;
   padding: 0 25px;
   font-size: 18px;
   opacity: 0.75;
+  transition: all 0.3s ease;
 }
 
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
-  color: var(--color1) !important;
+  color: var(--primary) !important;
   opacity: 1;
 }
 
@@ -137,8 +193,8 @@ span.navbar-text {
 .social-icon a {
   width: 42px;
   height: 42px;
-  background: var(--color4);
-  border: 1px solid var(--color3);
+  background: var(--surface);
+  border: 1px solid var(--outline);
   display: inline-flex;
   border-radius: 50%;
   margin-right: 6px;
@@ -148,7 +204,7 @@ span.navbar-text {
 }
 
 .social-icon a:hover {
-  background: var(--color1);
+  background: var(--primary);
 }
 
 .social-icon a::before {
@@ -156,7 +212,7 @@ span.navbar-text {
   width: 42px;
   height: 42px;
   position: absolute;
-  background-color: #ffffff;
+  background-color: var(--surface);
   border-radius: 50%;
   transform: scale(0);
   transition: 0.3s ease-in-out;
@@ -178,8 +234,8 @@ span.navbar-text {
 
 .navbar-text button {
   font-weight: 700;
-  color: #fff;
-  border: 1px solid #fff;
+  color: var(--background);
+  border: 1px solid var(--background);
   padding: 18px 34px;
   font-size: 18px;
   margin-left: 18px;
@@ -190,22 +246,23 @@ span.navbar-text {
 
 .navbar-text button span {
   z-index: 1;
+  position: relative;
 }
 
 .navbar-text button::before {
   content: "";
+  background: var(--background);
   width: 0%;
   height: 100%;
   position: absolute;
-  background-color: #fff;
-  left: 0;
   top: 0;
-  z-index: -1;
+  left: 0;
+  z-index: 0;
   transition: 0.3s ease-in-out;
 }
 
 .navbar-text button:hover {
-  color: #121212;
+  color: var(--on-background);
 }
 
 .navbar-text button:hover::before {
@@ -226,13 +283,13 @@ nav.navbar .navbar-toggler-icon {
   height: 17px;
   background-image: none;
   position: relative;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--background);
   transition: all 300ms linear;
   top: -2px;
 }
 
 nav.navbar .navbar-toggler-icon:focus {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--background);
 }
 
 nav.navbar .navbar-toggler-icon:after,
@@ -240,7 +297,7 @@ nav.navbar .navbar-toggler-icon:before {
   width: 24px;
   position: absolute;
   height: 2px;
-  background-color: #fff;
+  background-color: var(--background);
   top: 0;
   left: 0;
   content: '';
@@ -254,19 +311,80 @@ nav.navbar .navbar-toggler-icon:after {
 
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
   transform: rotate(45deg);
-  background-color: #fff;
+  background-color: var(--background);
   height: 2px;
 }
 
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
   transform: translateY(8px) rotate(-45deg);
-  background-color: #fff;
+  background-color: var(--background);
   height: 2px;
 }
 
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
 }
+
+
+.form-switch .form-check-input {
+  width: 2.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
+  background-color: var(--outline);
+  border-color: var(--outline);
+}
+
+.form-switch .form-check-input:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.form-switch .form-check-label {
+  color: var(--on-background);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.vvd {
+  font-weight: 700;
+  color: var(--background);
+  border: 1px solid var(--background);
+  padding: 14px 24px;
+  font-size: 16px;
+  margin-left: 18px;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
+  border-radius: 50px;
+}
+
+.vvd span {
+  z-index: 1;
+  position: relative;
+}
+
+.vvd::before {
+  content: "";
+  background: var(--background);
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+  border-radius: 50px;
+}
+
+.vvd:hover {
+  color: var(--on-background);
+}
+
+.vvd:hover::before {
+  width: 100%;
+}
+
+
 
 /************ Banner ************/
 .banner {
@@ -281,10 +399,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
-  background: linear-gradient(135deg,
-      var(--color1) 0%,
-      var(--color2) 100%);
-  color: var(--color5);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--on-background) 100%);
+  color: var(--background);
   border: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 20px;
   margin-bottom: 16px;
@@ -301,7 +417,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner p {
-  color: #B8B8B8;
+  color: var(--color-text-secondary);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -309,7 +425,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner button {
-  color: #fff;
+  color: var(--background);
   font-weight: 700;
   font-size: 20px;
   margin-top: 60px;
@@ -329,36 +445,30 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-left: 25px;
 }
 
-
-
 @keyframes updown {
   0% {
     transform: translateY(-20px);
   }
-
   50% {
     transform: translateY(20px);
   }
-
   100% {
     transform: translateY(-20px);
   }
 }
-
 
 .txt-rotate>.wrap {
   border-right: 0.08em solid #666;
 }
 
 /************ Skills ************/
-
 .skill {
   padding: 0 0 50px 0;
   position: relative;
 }
 
 .skill-bx {
-  background: var(--color4);
+  background: var(--surface);
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
@@ -368,11 +478,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill h2 {
   font-size: 45px;
   font-weight: 700;
-  color: var(--color2);
+  color: var(--on-background);
 }
 
 .skill p {
-  color: var(--color3);
+  color: var(--color-text-secondary);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -404,9 +514,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .owl-carousel .owl-nav button {
-  background-color: var(--color4);
+  background-color: var(--surface);
   border: none;
-  color: var(--color2);
+  color: var(--on-background);
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
@@ -414,8 +524,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .owl-carousel .owl-nav button:hover {
-  background-color: var(--color1);
-  color: var(--color5);
+  background-color: var(--primary);
+  color: var(--background);
 }
 
 .owl-carousel .owl-nav button.owl-prev {
@@ -430,18 +540,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: var(--color4);
+  background-color: var(--surface);
 }
 
 .project h2 {
-  color: var(--color2);
+  color: var(--on-background);
   font-size: 45px;
   font-weight: 700;
   text-align: center;
 }
 
 .project p {
-  color: var(--color3);
+  color: var(--color-text-secondary);
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
@@ -454,8 +564,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 72%;
   margin: 0 auto;
   border-radius: 50px;
-  background-color: rgb(255 255 255 / 10%);
+  background-color: rgba(255, 255, 255, 0.1);
   overflow: hidden;
+  border: 1px solid var(--outline);
 }
 
 .project .nav.nav-pills .nav-item {
@@ -466,15 +577,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: transparent;
   border-radius: 0;
   padding: 17px 0;
-  color: #fff;
+  color: var(--on-background);
   width: 100%;
   font-size: 17px;
   letter-spacing: 0.8px;
   font-weight: 500;
   position: relative;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-align: center;
   z-index: 0;
+  border-color: var(--outline);
 }
 
 .project .nav.nav-pills .nav-link::before {
@@ -482,10 +594,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: absolute;
   width: 0;
   height: 100%;
-  background: linear-gradient(to right,
-      #5d544d 0%,
-      #cb6f84 50%,
-      #291d21 100%);
+  background: linear-gradient(to right, var(--on-surface) 0%, var(--secondary) 50%, var(--on-background) 100%);
   top: 0;
   left: 0;
   z-index: -1;
@@ -497,22 +606,36 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .project .nav.nav-pills .nav-link.active {
-  border: 1px solid rgba(255, 255, 255, 1);
+  border: 1px solid var(--primary); 
 }
 
 .nav-link#projects-tabs-tab-first {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--outline);
   border-radius: 55px 0px 0px 55px;
 }
 
 .nav-link#projects-tabs-tab-second {
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid var(--outline);
+  border-bottom: 1px solid var(--outline);
 }
 
 .nav-link#projects-tabs-tab-third {
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--outline);
   border-radius: 0 55px 55px 0;
+}
+
+[data-theme="dark"] .project .nav.nav-pills .nav-link {
+  border-color: rgba(255, 255, 255, 0.5); 
+}
+
+[data-theme="dark"] .nav-link#projects-tabs-tab-first,
+[data-theme="dark"] .nav-link#projects-tabs-tab-second,
+[data-theme="dark"] .nav-link#projects-tabs-tab-third {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="light"] .project .nav.nav-pills .nav-link {
+  border-color: var(--outline);
 }
 
 .proj-imgbx {
@@ -524,9 +647,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(to bottom,
-      rgba(207, 204, 187, 0.9) 0%,
-      rgba(225, 218, 202, 0.7) 100%);
+  background: linear-gradient(to bottom, rgba(207, 204, 187, 0.9) 0%, rgba(225, 218, 202, 0.7) 100%);
   opacity: 0.85;
   position: absolute;
   width: 100%;
@@ -554,7 +675,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   opacity: 1;
 }
 
-
 .proj-txtx h4 {
   font-size: 30px;
   font-weight: 700;
@@ -574,7 +694,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.5s ease;
-  background: #fff;
+  background: var(--on-surface);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
@@ -631,12 +751,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .card-body {
-  color: #333;
+  color: var(--on-surface);
 }
 
 .card-title {
   font-size: 1.25rem;
-  color: #2c3e50;
+  color: var(--on-background);
 }
 
 .project-card .card-text {
@@ -645,7 +765,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -660,16 +780,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .bg-primary-light {
-  background-color: rgba(13, 110, 253, 0.1);
+  background-color: rgba(255, 107, 0, 0.1);
 }
 
 .swal2-container {
-  z-index: 2000 !important; 
-  pointer-events: none; 
+  z-index: 2000 !important;
+  pointer-events: none;
 }
 
 .swal2-toast {
-  top: 70px !important; 
+  top: 70px !important;
 }
 
 @media (max-width: 576px) {
@@ -681,11 +801,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Footer ************/
 .footer {
   padding: 15px 0 20px 0;
-  background-color: var(--color2);
-  color: var(--color5);
+  background-color: var(--color-bg-primary); 
+  color: var(--on-background); 
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  border-top: 1px solid var(--outline); 
 }
 
 .footer .align-items-center {
@@ -696,13 +817,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .footer h4 {
-  color: var(--color5);
+  color: var(--on-background); 
   font-size: 45px;
   font-weight: 700;
   letter-spacing: 0.8px;
 }
 
 .footer p {
+  color: var(--on-surface); 
   font-weight: 400;
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -710,33 +832,43 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .footer a {
-  color: var(--color1);
+  color: var(--primary);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer a:hover {
-  color: var(--color4);
+  color: var(--hover-state);
+}
+
+
+.footer .social-icon a {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--primary);
+}
+
+.footer .social-icon a:hover {
+  background: var(--primary);
 }
 
 /************ Contact ************/
-
 .contact {
-  background: linear-gradient(90.21deg, var(--color1) -5.91%, var(--color2) 111.58%);
+  background: linear-gradient(90.21deg, var(--primary) -5.91%, var(--on-background) 111.58%);
   padding: 60px 0 50px 0;
 }
 
-
 .contact h2 {
-	font-size: 45px;
-	font-weight: 700;
+  font-size: 45px;
+  font-weight: 700;
   margin-bottom: 30px;
-  color: var(--color5);
+  color: var(--background);
 }
 
-.contact form input, .contact form textarea {
+.contact form input,
+.contact form textarea {
   width: 100%;
   background: rgba(255, 255, 255, 0.1);
-  border: 1px solid var(--color4); 
+  border: 1px solid var(--outline);
   border-radius: 20px;
   margin: 0 0 8px 0;
   padding: 18px 26px;
@@ -746,26 +878,29 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.3s ease-in-out;
 }
 
-.contact form input:focus, .contact form textarea:focus {
-  background: var(--color5); 
-  color: var(--color2);
+.contact form input:focus,
+.contact form textarea:focus {
+  background: var(--background);
+  color: var(--on-background);
 }
 
-.contact form input::placeholder, .contact form textarea::placeholder {
+.contact form input::placeholder,
+.contact form textarea::placeholder {
   font-size: 16px;
   font-weight: 400;
-  color: var(--color5);
+  color: var(--background);
 }
 
-.contact form input:focus::placeholder, .contact form textarea:focus::placeholder {
-  color: var(--color2);
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder {
+  color: var(--on-background);
   opacity: 0.8;
 }
 
 .contact form button {
   font-weight: 700;
-  color: var(--color5); 
-  background-color: var(--color1);
+  color: var(--background);
+  background-color: var(--primary);
   padding: 14px 48px;
   font-size: 18px;
   margin-top: 25px;
@@ -780,12 +915,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .contact form button:hover {
-  color: var(--color5);
+  color: var(--background);
 }
 
 .contact form button::before {
   content: "";
-  background: var(--color2);
+  background: var(--on-background);
   width: 0;
   height: 100%;
   position: absolute;

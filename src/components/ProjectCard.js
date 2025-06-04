@@ -27,11 +27,16 @@ export const ProjectCard = ({ title, description, imgUrl, githubUrl, demoUrl }) 
             )}
           </div>
         </div>
-        
-        
+
+
         <Card.Body className="d-flex flex-column px-4 py-3">
-          <Card.Title className="fw-bold mb-3 text-center">{title}</Card.Title>
-          <Card.Text className="text-muted flex-grow-1 text-start">
+          <Card.Title className="fw-bold mb-3 text-center"
+            style={{
+              color: 'var(--background)'
+            }}>{title}</Card.Title>
+          <Card.Text className="flex-grow-1 text-start" style={{
+            color: 'var(--background)'
+          }}>
             {description}
           </Card.Text>
         </Card.Body>

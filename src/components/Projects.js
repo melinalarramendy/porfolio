@@ -9,43 +9,50 @@ import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
-    const projectsMERN = [
-      {
-        title: "Sistema de logeo",
-        description: "Desarrollo de sistema de logeo con autenticación de usuario, hasheo de contraseña y jwt",
-        imgUrl: loginMERN,
-        githubUrl:"https://github.com/melinalarramendy/sistema-login"
-      },
-      {
-        title: "Sistema de gestión de tareas",
-        description: "Desarrollo de sistema de gestión de tareas con autenticación de usuario con jwt",
-        imgUrl: logo,
-        githubUrl:"https://github.com/melinalarramendy/taskManager"
-      },
-      {
-        title: "Portfolio", 
-        description: "Desarrollo y diseño de portfolio personal con React y Bootstrap",
-        imgUrl: porfolio,
-        githubUrl:"https://github.com/melinalarramendy/porfolio"
-      }
-    ];
-    const projectsP = [
-      {
-        title: "Sistema de logeo",
-        description: "Desarrollo de sistema de logeo con autenticación de usuario (hasheo de contraseña y jwt)",
-        imgUrl: loginflask,
-        githubUrl:"https://github.com/melinalarramendy/sistema-login-flask"
-      }
-    ]
-  
-    return (
-      <section className="project" id="projects">
-        <Container>
-          <Row>
-            <Col size={12}>
-              <TrackVisibility>
-                {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
+  const projectsMERN = [
+    {
+      title: "Sistema de logeo",
+      description: "Aplicación MERN para autenticación de usuarios con registro, inicio de sesión, encriptación de contraseñas (bcrypt) y generación de tokens JWT. Incluye pruebas con Postman y diseño responsivo con Bootstrap.",
+      imgUrl: loginMERN,
+      githubUrl: "https://github.com/melinalarramendy/sistema-login"
+    },
+    {
+      title: "Sistema de gestión de tareas",
+      description: "Plataforma fullstack para gestionar tareas con CRUD completo, autenticación de usuarios mediante JWT, alertas personalizadas con SweetAlert2 y notificaciones por email utilizando Nodemailer y Mailtrap. Tambien te permite agregar amigos y compartir tableros con roles.",
+      imgUrl: logo,
+      githubUrl: "https://github.com/melinalarramendy/taskManager"
+    },
+    {
+      title: "Portfolio",
+      description: "Sitio web personal diseñado y desarrollado con React y Bootstrap para mostrar proyectos, habilidades y contacto. Diseño responsive y enfoque moderno.",
+      imgUrl: porfolio,
+      githubUrl: "https://github.com/melinalarramendy/porfolio"
+    }
+  ];
+
+  const projectsP = [
+    {
+      title: "Sistema de logeo (Flask)",
+      description: "Aplicación web con Flask para autenticación de usuarios. Implementa registro, login seguro con hash de contraseñas y autenticación con JWT. Backend en Python y frontend con React.",
+      imgUrl: loginflask,
+      githubUrl: "https://github.com/melinalarramendy/sistema-login-flask"
+    },
+    {
+      title: "Tienda E-commerce genérica",
+      description: "Desarrollo de una tienda online genérica con backend en Flask y frontend en React. Permite navegación por productos, autenticación, manejo de usuarios y estructura escalable para múltiples rubros.",
+      imgUrl: logo,
+      githubUrl: "https://github.com/melinalarramendy/tiendaGenerica"
+    }
+  ];
+
+  return (
+    <section className="project" id="projects">
+      <Container>
+        <Row>
+          <Col size={12}>
+            <TrackVisibility>
+              {({ isVisible }) =>
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                   <h2>Proyectos</h2>
                   <p>Algunos proyectos que fui desarrollado</p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
@@ -69,7 +76,7 @@ export const Projects = () => {
                                 <ProjectCard
                                   key={index}
                                   {...project}
-                                  />
+                                />
                               )
                             })
                           }
@@ -79,14 +86,14 @@ export const Projects = () => {
                         <h2>Proximamente</h2>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
-                      <Row>
+                        <Row>
                           {
                             projectsP.map((project, index) => {
                               return (
                                 <ProjectCard
                                   key={index}
                                   {...project}
-                                  />
+                                />
                               )
                             })
                           }
@@ -95,10 +102,10 @@ export const Projects = () => {
                     </Tab.Content>
                   </Tab.Container>
                 </div>}
-              </TrackVisibility>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-    )
-  }
+            </TrackVisibility>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  )
+}

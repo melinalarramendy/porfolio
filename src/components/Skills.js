@@ -28,11 +28,16 @@ export const Skills = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <div className="skill-bx wow zoomIn ">
+                        <div className="skill-bx wow zoomIn">
                             <h2>Skills</h2>
-                            <p>Adquirí mis habilidades técnicas durante mi formación, donde desarrollé una base de programación y tecnologías.<br></br>Complementé mi formación mediante el programa Codo a Codo 4.0,  donde me especialicé en desarrollo web full stack con tecnologías del mercado.</p>
-                            <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider" containerClass="mx-md-5 px-md-4"
-                                arrows>
+                            <p>Adquirí mis habilidades técnicas durante mi formación, donde desarrollé una base de programación y tecnologías.<br></br>Complementé mi formación mediante el programa Codo a Codo 4.0, donde me especialicé en desarrollo web full stack con tecnologías del mercado.</p>
+                            <Carousel
+                                responsive={responsive}
+                                infinite={true}
+                                className="owl-carousel owl-theme skill-slider"
+                                containerClass="mx-md-5 px-md-4"
+                                arrows
+                            >
                                 <div className="item">
                                     <div style={{
                                         width: '100px',
@@ -40,10 +45,14 @@ export const Skills = () => {
                                     }}>
                                         <CircularProgressbar
                                             value={60}
-                                            
                                             styles={{
-                                                path: { stroke: 'var(--color1)' }, 
-                                                text: { fill: 'var(--color2)' },
+                                                path: { stroke: 'var(--primary)' },
+                                                trail: { stroke: 'var(--outline)' },
+                                                text: {
+                                                    fill: 'var(--on-background)',
+                                                    fontSize: '16px',
+                                                    fontWeight: 'bold'
+                                                },
                                                 root: { display: 'block' }
                                             }}
                                         />
@@ -58,10 +67,14 @@ export const Skills = () => {
                                     }}>
                                         <CircularProgressbar
                                             value={50}
-                                            
                                             styles={{
-                                                path: { stroke: 'var(--color1)' },
-                                                text: { fill: 'var(--color2)' },
+                                                path: { stroke: 'var(--primary)' },
+                                                trail: { stroke: 'var(--outline)' },
+                                                text: {
+                                                    fill: 'var(--on-background)',
+                                                    fontSize: '16px',
+                                                    fontWeight: 'bold'
+                                                },
                                                 root: { display: 'block' }
                                             }}
                                         />
@@ -76,10 +89,14 @@ export const Skills = () => {
                                     }}>
                                         <CircularProgressbar
                                             value={60}
-                                            
                                             styles={{
-                                                path: { stroke: 'var(--color1)' }, 
-                                                text: { fill: 'var(--color2)' },
+                                                path: { stroke: 'var(--primary)' },
+                                                trail: { stroke: 'var(--outline)' },
+                                                text: {
+                                                    fill: 'var(--on-background)',
+                                                    fontSize: '16px',
+                                                    fontWeight: 'bold'
+                                                },
                                                 root: { display: 'block' }
                                             }}
                                         />
@@ -92,11 +109,15 @@ export const Skills = () => {
                                         margin: '0 auto 15px'
                                     }}>
                                         <CircularProgressbar
-                                            value={55}
-                                            
+                                            value={65}
                                             styles={{
-                                                path: { stroke: 'var(--color1)' },
-                                                text: { fill: 'var(--color2)' },
+                                                path: { stroke: 'var(--primary)' },
+                                                trail: { stroke: 'var(--outline)' },
+                                                text: {
+                                                    fill: 'var(--on-background)',
+                                                    fontSize: '16px',
+                                                    fontWeight: 'bold'
+                                                },
                                                 root: { display: 'block' }
                                             }}
                                         />
@@ -109,11 +130,15 @@ export const Skills = () => {
                                         margin: '0 auto 15px'
                                     }}>
                                         <CircularProgressbar
-                                            value={50}
-                                            
+                                            value={55}
                                             styles={{
-                                                path: { stroke: 'var(--color1)' },
-                                                text: { fill: 'var(--color2)' },
+                                                path: { stroke: 'var(--primary)' },
+                                                trail: { stroke: 'var(--outline)' },
+                                                text: {
+                                                    fill: 'var(--on-background)',
+                                                    fontSize: '16px',
+                                                    fontWeight: 'bold'
+                                                },
                                                 root: { display: 'block' }
                                             }}
                                         />
