@@ -406,6 +406,92 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: var(--primary);
 }
 
+@media (max-width: 767px) {
+  nav.navbar {
+    padding: 12px 0;
+  }
+
+  nav.navbar .navbar-brand {
+    width: auto;
+    margin-right: 0;
+  }
+
+  nav.navbar .navbar-brand h4 {
+    font-size: 32px;
+  }
+
+  .navbar-collapse {
+    padding: 15px 0;
+    background-color: var(--color-bg-primary);
+    border-top: 1px solid var(--outline);
+    margin-top: 10px;
+  }
+
+  .navbar-nav {
+    margin-bottom: 15px;
+  }
+
+  .navbar-nav .nav-link.navbar-link {
+    padding: 10px 0;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .navbar-text {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    order: 2;
+  }
+
+  .form-switch {
+    order: 1;
+    margin: 0 auto;
+    padding: 5px 0;
+  }
+
+  .social-icon {
+    order: 2;
+    margin: 0 auto;
+    padding: 5px 0;
+  }
+
+  .vvd {
+    order: 3;
+    margin:0 auto;
+    width: 90%;
+
+    display: block;
+  }
+
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-nav {
+    order: 0;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+nav.navbar .navbar-toggler-icon {
+  border-bottom-color: var(--primary);
+}
+
+nav.navbar .navbar-toggler-icon:before,
+nav.navbar .navbar-toggler-icon:after {
+  background-color: var(--primary);
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  background-color: var(--primary);
+}
+
+
 /************ Banner ************/
 .banner {
   margin-top: 0;
@@ -822,34 +908,55 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Footer ************/
 .footer {
-  padding: 40px 0;
+  padding: 15px 0 20px 0;
   background-color: var(--color-bg-primary);
   color: var(--on-background);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-top: 1px solid var(--outline);
-  text-align: center;
 }
 
-.footer-content {
+.footer .align-items-center {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 25px;
-  max-width: 800px;
-  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
-.footer-logo {
+.footer h4 {
   color: var(--on-background);
-  font-size: 2.5rem;
+  font-size: 45px;
   font-weight: 700;
   letter-spacing: 0.8px;
-  margin: 0;
 }
 
-.footer-copyright {
+.footer p {
   color: var(--on-surface);
-  font-size: 1rem;
-  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+}
+
+.footer a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--hover-state);
+}
+
+
+.footer .social-icon a {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--primary);
+}
+
+.footer .social-icon a:hover {
+  background: var(--primary);
 }
 
 
@@ -878,25 +985,30 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
-@media (min-width: 768px) {
-  .footer h4 {
-    font-size: 2.5rem;
+@media (max-width: 767px) {
+  .footer .row {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .footer p {
-    font-size: 1rem;
+  .footer h4 {
+    order: 1;
+    font-size: 2rem;
   }
 
   .footer .social-icon {
-    width: 42px;
-    height: 42px;
+    order: 2;
+    justify-content: center;
+    margin: 10px 0;
   }
 
-  .footer .social-icon img {
-    width: 22px;
-    height: 22px;
+  .footer p {
+    order: 3;
+    font-size: 0.9rem;
   }
 }
+
+
 
 /************ Contact ************/
 .contact {
@@ -979,13 +1091,4 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .contact form button:hover::before {
   width: 100%;
-}
-
-.footer .social-icon a {
-  margin: 0 10px;
-}
-
-.footer .social-icon img {
-  width: 24px;
-  height: 24px;
 }

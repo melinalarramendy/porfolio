@@ -67,7 +67,6 @@ export const NavBar = () => {
                             label={darkMode ? '🌙' : '☀️'}
                             checked={darkMode}
                             onChange={toggleDarkMode}
-                            className="me-3"
                         />
                         <div className="social-icon">
                             <a href="https://github.com/melinalarramendy"><img src={iconogithub} alt="GitHub" /></a>
