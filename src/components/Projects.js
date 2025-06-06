@@ -21,7 +21,10 @@ export const Projects = () => {
       description: "Plataforma fullstack para gestionar tareas con CRUD completo, autenticación de usuarios mediante JWT, alertas personalizadas con SweetAlert2 y notificaciones por email utilizando Nodemailer y Mailtrap. Tambien te permite agregar amigos y compartir tableros con roles.",
       imgUrl: logo,
       githubUrl: "https://github.com/melinalarramendy/taskManager"
-    },
+    }
+  ];
+
+  const ReactP = [
     {
       title: "Portfolio",
       description: "Sitio web personal diseñado y desarrollado con React y Bootstrap para mostrar proyectos, habilidades y contacto. Diseño responsive y enfoque moderno.",
@@ -58,10 +61,10 @@ export const Projects = () => {
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                       <Nav.Item>
-                        <Nav.Link eventKey="first">React & MERN</Nav.Link>
+                        <Nav.Link eventKey="first">MERN</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="second">java</Nav.Link>
+                        <Nav.Link eventKey="second">React</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
                         <Nav.Link eventKey="third">Python</Nav.Link>
@@ -83,7 +86,16 @@ export const Projects = () => {
                         </Row>
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                        <h2>Proximamente</h2>
+                        {
+                            ReactP.map((project, index) => {
+                              return (
+                                <ProjectCard
+                                  key={index}
+                                  {...project}
+                                />
+                              )
+                            })
+                          }
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
                         <Row>
