@@ -46,7 +46,7 @@ export const NavBar = () => {
     };
 
     return (
-        <Navbar expand="md" className={`justify-content-between ${scrolled ? "scrolled" : ""}`}>
+        <Navbar expand="lg" className={`justify-content-between ${scrolled ? "scrolled" : ""}`}>
             <Container fluid>
                 <Navbar.Brand href="#home" className="me-5">
                     <h4>ML</h4>

@@ -1,82 +1,45 @@
-import { useState, useEffect, useCallback } from 'react';
-import { ArrowRightCircle } from 'react-bootstrap-icons';
-import { Container, Row, Col } from "react-bootstrap";
-import 'animate.css';
-import bannerIMG from '../assets/img/bannerIMG.png';
-import TrackVisibility from 'react-on-screen';
+import { Container } from "react-bootstrap";
+import profileIMG from '../assets/img/bannerIMG.png';
+import iconogithub from '../assets/img/icono-github.svg';
+import iconogmail from '../assets/img/icono-gmail.svg';
+import iconolinkedin from '../assets/img/icono-linkedin.svg';
 
 export const Banner = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState('');
-  const [delta, setDelta] = useState(200 - Math.random() * 50);
-  const [index, setIndex] = useState(1);
-  const toRotate = ["Técnica superior en análisis de sistemas", "Desarrolladora"];
-  const period = 1500;
-
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-
-    return () => { clearInterval(ticker) };
-  }, [text])
-
-  const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
-
-    setText(updatedText);
-
-    if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
-    }
-
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setIndex(prevIndex => prevIndex - 1);
-      setDelta(period);
-    } else if (isDeleting && updatedText === '') {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-      setIndex(1);
-      setDelta(500);
-    } else {
-      setIndex(prevIndex => prevIndex + 1);
-    }
-  }
-
   return (
-    <section className="banner" id="home">
+    <section className="banner my-5 py-5" id="home">
       <Container>
-        <Row className="aligh-items-center">
-          <Col xs={12} md={6} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <span className="tagline">Bienvenido/a a mi portfolio</span>
-                  <h1>{`Hola! Soy Melina`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Técnica superior en análisis de sistemas", "Desarrolladora"]'><span className="wrap">{text}</span></span></h1>
-                  <p></p>
-                  <button onClick={() => window.location.href = '#connect'}>
-                    Conectemos! <ArrowRightCircle size={25} />
-                  </button>
-                </div>}
-            </TrackVisibility>
-          </Col>
-          <Col xs={12} md={6} xl={5}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={bannerIMG} alt="Mi imagen" />
-                </div>}
-            </TrackVisibility>
-          </Col>
-        </Row>
+        <div className="profile-card-container">
+          <div className="card-inner">
+            <div className="profile-left">
+              <div className="profile-image">
+                <img src={profileIMG} alt="Perfil Melina" />
+              </div>
+              <div className="social-icon">
+                <a href="https://github.com/melinalarramendy" target="_blank" rel="noreferrer">
+                  <img src={iconogithub} alt="GitHub" />
+                </a>
+                <a href="mailto:melinalarramendy@gmail.com">
+                  <img src={iconogmail} alt="Gmail" />
+                </a>
+                <a href="https://linkedin.com/in/melina-larramendy-60340522b" target="_blank" rel="noreferrer">
+                  <img src={iconolinkedin} alt="LinkedIn" />
+                </a>
+              </div>
+            </div>
+
+            <div className="profile-right">
+              <h2>Sobre mí</h2>
+              <p>
+                Soy Técnica Superior en Análisis de Sistemas y desarrolladora junior con enfoque en desarrollo web fullstack.</p>
+              <p>Me apasiona crear soluciones tecnológicas, aprender constantemente y trabajar en equipo.</p>
+              <p>Manejo tecnologías como React, JavaScript, Node.js, Flask, MongoDB, y más.</p>
+              <p>Estoy en búsqueda de mi primera experiencia profesional en IT para seguir creciendo y aportar con entusiasmo.</p>
+            </div>
+          </div>
+        </div>
       </Container>
     </section>
-  )
-
-}
+  );
+};
 
 
