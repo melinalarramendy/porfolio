@@ -32,7 +32,7 @@ export const Banner = () => {
               <p>
                 Soy Técnica Superior en Análisis de Sistemas y desarrolladora junior con enfoque en desarrollo web fullstack.</p>
               <p>Me apasiona crear soluciones tecnológicas, aprender constantemente y trabajar en equipo.</p>
-              <p>Manejo tecnologías como React, JavaScript, Node.js, Flask, MongoDB, y más.</p>
+              <p>Manejo tecnologías como React, JavaScript, Node.js, Flask, MongoDB, PosgreSQL, y más.</p>
               <p>Estoy en búsqueda de mi primera experiencia profesional en IT para seguir creciendo y aportar con entusiasmo.</p>
             </div>
           </div>
