@@ -28,12 +28,13 @@ export const Banner = () => {
             </div>
 
             <div className="profile-right">
-              <h2>Sobre mí</h2>
-              <p>
-                Soy Técnica Superior en Análisis de Sistemas y desarrolladora junior con enfoque en desarrollo web fullstack.</p>
-              <p>Me apasiona crear soluciones tecnológicas, aprender constantemente y trabajar en equipo.</p>
-              <p>Manejo tecnologías como React, JavaScript, Node.js, Flask, MongoDB, PosgreSQL, y más.</p>
-              <p>Estoy en búsqueda de mi primera experiencia profesional en IT para seguir creciendo y aportar con entusiasmo.</p>
+              <h2 className="fw-bolder">Melina Larramendy</h2>
+              <p className="fw-bold">
+                Data Analyst Jr | Técnica en Análisis de Sistemas | Ciencia de Datos</p>
+              <hr/>
+              <p>Técnica en Análisis de Sistemas y estudiante de Ciencia de Datos, con formación sólida en Python, SQL, análisis exploratorio y ETL básico.</p>
+              <p>Experiencia en proyectos prácticos aplicados a análisis, dashboards, scraping y modelos predictivos simples.</p>
+              <p>Busco mi primera oportunidad profesional en Data/IT.</p>
             </div>
           </div>
         </div>

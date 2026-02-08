@@ -58,29 +58,7 @@ export const Skills = () => {
                                         />
                                     </div>
                                     <h5 className='mt-2'>Bases de datos</h5>
-                                    <p>PosgreSQL, MongoBD</p>
-                                </div>
-                                <div className="item">
-                                    <div style={{
-                                        width: '100px',
-                                        margin: '0 auto 15px'
-                                    }}>
-                                        <CircularProgressbar
-                                            value={50}
-                                            styles={{
-                                                path: { stroke: 'var(--primary)' },
-                                                trail: { stroke: 'var(--outline)' },
-                                                text: {
-                                                    fill: 'var(--on-background)',
-                                                    fontSize: '16px',
-                                                    fontWeight: 'bold'
-                                                },
-                                                root: { display: 'block' }
-                                            }}
-                                        />
-                                    </div>
-                                    <h5>Java</h5>
-                                    <p>Spring Boot</p>
+                                    <p>PosgreSQL, MongoBD, MySQL (JOINS, CTEs)</p>
                                 </div>
                                 <div className="item">
                                     <div style={{
@@ -101,28 +79,8 @@ export const Skills = () => {
                                             }}
                                         />
                                     </div>
-                                    <h5>PHP</h5>
-                                </div>
-                                <div className="item">
-                                    <div style={{
-                                        width: '100px',
-                                        margin: '0 auto 15px'
-                                    }}>
-                                        <CircularProgressbar
-                                            value={65}
-                                            styles={{
-                                                path: { stroke: 'var(--primary)' },
-                                                trail: { stroke: 'var(--outline)' },
-                                                text: {
-                                                    fill: 'var(--on-background)',
-                                                    fontSize: '16px',
-                                                    fontWeight: 'bold'
-                                                },
-                                                root: { display: 'block' }
-                                            }}
-                                        />
-                                    </div>
-                                    <h5>React</h5>
+                                    <h5>Desarrollo</h5>
+                                    <p>JavaScript, React, PHP</p>
                                 </div>
                                 <div className="item">
                                     <div style={{
@@ -144,6 +102,51 @@ export const Skills = () => {
                                         />
                                     </div>
                                     <h5>Python</h5>
+                                    <p>Pandas, Numpy, Scikit-Learn, Flask</p>
+                                </div>
+                                <div className="item">
+                                    <div style={{
+                                        width: '100px',
+                                        margin: '0 auto 15px'
+                                    }}>
+                                        <CircularProgressbar
+                                            value={35}
+                                            styles={{
+                                                path: { stroke: 'var(--primary)' },
+                                                trail: { stroke: 'var(--outline)' },
+                                                text: {
+                                                    fill: 'var(--on-background)',
+                                                    fontSize: '16px',
+                                                    fontWeight: 'bold'
+                                                },
+                                                root: { display: 'block' }
+                                            }}
+                                        />
+                                    </div>
+                                    <h5>Data</h5>
+                                    <p>EDA, ETL, limpieza, normalización</p>
+                                </div>
+                                <div className="item">
+                                    <div style={{
+                                        width: '100px',
+                                        margin: '0 auto 15px'
+                                    }}>
+                                        <CircularProgressbar
+                                            value={65}
+                                            styles={{
+                                                path: { stroke: 'var(--primary)' },
+                                                trail: { stroke: 'var(--outline)' },
+                                                text: {
+                                                    fill: 'var(--on-background)',
+                                                    fontSize: '16px',
+                                                    fontWeight: 'bold'
+                                                },
+                                                root: { display: 'block' }
+                                            }}
+                                        />
+                                    </div>
+                                    <h5>Herramientas</h5>
+                                    <p>Git, GitHub, Postman</p>
                                 </div>
                             </Carousel>
                         </div>
