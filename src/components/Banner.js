@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import profileIMG from '../assets/img/bannerIMG.png';
+import profileIMG from '../assets/img/sin_fondo_fotoCv.png';
 import iconogithub from '../assets/img/icono-github.svg';
 import iconogmail from '../assets/img/icono-gmail.svg';
 import iconolinkedin from '../assets/img/icono-linkedin.svg';

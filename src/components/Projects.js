@@ -5,6 +5,8 @@ import logo from "../assets/img/logo.png";
 import loginMERN from "../assets/img/loginMERN.png";
 import porfolio from "../assets/img/porfolio.png";
 import loginflask from "../assets/img/login-flask.png";
+import imgGlobal from "../assets/img/distribuciones_numericas.png";
+import imgChurn from "../assets/img/imgChurn.png";
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
@@ -37,13 +39,13 @@ export const Projects = () => {
     {
       title: "EDA + Dashboard - Global AI Adoption Analysis",
       description: "Análisis completo de extremo a extremo de los patrones de adopción de herramientas de IA en empresas globales. Este proyecto muestra el flujo de trabajo completo de la ciencia de datos, desde la limpieza de datos hasta la generación de conocimientos.",
-      imgUrl: logo,
+      imgUrl: imgGlobal,
       githubUrl: "https://github.com/melinalarramendy/ai-adoption-global-analysis"
     },
     {
       title: "Modelo Predictivo (ML básico) - Customer Churn Prediction (Telecom)",
       description: "Predicción de abandono de clientes (churn) en una compañía de telecomunicaciones utilizando técnicas de Machine Learning.",
-      imgUrl: logo,
+      imgUrl: imgChurn,
       githubUrl: "https://github.com/melinalarramendy/proyecto-churn-telecom"
     },
     {
